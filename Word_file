@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+struct string
+{
+	char p[10];
+};string s[4];
+
+int main()
+{char t[10],k[100];int i=0,j=0,o=0;
+FILE*m;
+m=fopen("file.txt","w");
+fgets(k,100,m);
+printf("Enter the word to search: ");
+scanf("%s",t);
+m=fopen("file.txt","r");
+while(getc(m)!=EOF)
+{fseek(m,o,0);
+	if(getc(m)!=' ')
+	{fseek(m,o,0);
+		s[i].p[j]=getc(m);j++;o++;
+	}else{
+		i++;j=0;o++;
+	}
+}
+for(i=0;i<4;i++)
+{
+	if(strcmp(s[i].p,t)==0)
+	{
+		printf("it is in thise file");return 0;
+	}
+}
+printf("it is not in thise file");
+}
